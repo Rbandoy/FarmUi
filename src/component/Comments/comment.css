@@ -1,0 +1,13 @@
+.comment_container{
+  display: flex;
+  justify-content: center;
+}
+
+.comment_container .MuiList-root{
+  position: unset;
+}
+.showMore {
+  text-decoration: underline;
+  cursor: pointer;
+  color: blueviolet;
+}

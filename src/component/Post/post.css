@@ -1,0 +1,66 @@
+.post{ 
+ width: 600px;
+ display: flex;
+ margin-right: auto;
+ margin-left: auto;
+ /* border: 1px solid lightgreen; */
+ margin-top: 20px;
+ margin-bottom: 20px;    
+}
+
+ 
+
+.post_text{
+  margin: 20px 0px 20px 20px;
+}
+ 
+
+.post_header .MuiListItem-root {
+  position: unset;
+}
+
+.post_header .MuiAvatar-root {
+  position: unset;
+}
+
+.post_header {
+  box-shadow: 0rem 0rem 1.5rem -0.3rem lightgreen; 
+  border-radius: 10px
+}
+
+.form_comment{ 
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 95%;
+  align-items: center;
+  margin: 10px;
+} 
+
+.form_comment .MuiButtonBase-root{
+  position: unset;
+} 
+
+
+.MuiFormControl-root {
+  width: 80%;
+}
+  
+.post_input{
+  flex:1
+}
+
+.post-image-container { 
+  width: 606px;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.post_header .css-1x8eb2n-MuiImageList-root {
+  width: 578px;
+  height: 409px;
+}
+.post-image-container img {
+  max-width: 100%; 
+  
+}

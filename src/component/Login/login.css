@@ -1,0 +1,110 @@
+.main-login {
+  min-height: 100vh;
+  min-width: 20vw;
+  overflow-x: hidden;
+  background: whitesmoke;
+  
+}
+form {
+  width: 50%;
+}
+.login-container {
+  height: 79vh;
+  width: 31vw;
+  /* background: lightgreen; */
+  border-radius: 1rem;
+  margin: 2rem auto;
+  box-shadow:0.4rem 0.4rem 2rem -0.6rem #414441;
+  justify-content: center;
+  display: flex;
+  align-items: center; 
+}
+.login-container  .left-side, .right-side{
+    border-radius: 1rem;
+    margin: 1rem;
+    box-shadow:0rem 0rem 0.3rem -0.2rem #414441;
+    height: 80%;
+    width: 100%;
+}
+.login-container  .left-side{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container  .right-side{
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container  .left-side input{
+  display: block;
+  border: none;
+  height: 2rem;
+  width: 100%; 
+}
+
+.login-container .left-side button {
+  margin-top: 20px;
+  width: 80%;
+  cursor: pointer;
+  border: 0;
+  border-radius: 2rem;
+  background: green;
+  color: whitesmoke;
+  font-size: large;
+  padding: 0.5rem 1rem;
+  
+}
+ 
+
+.login-container  .left-side label{
+ display: block;
+ text-align: left;
+ width: 78%; 
+ font-size: small;
+ margin-top: 5px;
+ margin-bottom: 10px;
+}
+
+.login-container  .left-side .logo{ 
+  margin-bottom: 20px;
+  object-fit: cover; 
+}
+
+.login-container  .left-side .logo #logo{
+  height: 8rem; 
+}
+
+.login-container  .left-side  input:hover, button:hover{
+  box-shadow: 2px 2px 9px -1px lightgreen;
+}
+
+.login-container  .right-side .welcomeImg{  
+  object-fit: cover;
+  width: 100%; 
+  height: 100%;
+  margin: 0rem auto;
+}
+
+.login-container  .right-side .welcomeImg #welcome{
+  height: 100%;
+  width: 100%;
+}
+
+.login-container  .right-side .welcomeNote h3{  
+  float: left;
+  margin-left: -9rem;
+  color: lightgreen;
+}
+#login {
+  color: whitesmoke;
+  background: lightgreen;
+}
+ 
+.login {
+  color: lightgreen; 
+}

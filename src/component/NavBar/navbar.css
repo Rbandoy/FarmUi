@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+nav {
+  background: whitesmoke;
+  height: 80px;
+}
+
+.logoNav {
+  height: 100%;
+  float: left;
+  color: lightgreen;
+  font-size: 40px;
+  text-transform: capitalize;
+  font-weight: bold;
+  line-height: 80px;
+  display: flex;
+  align-items: center;
+  padding:  0 80px;
+}
+
+.userName {
+  height: 100%;
+  float: left;
+  color: lightgreen;
+  font-size: 40px;
+  text-transform: capitalize;
+  font-weight: bold;
+  line-height: 80px;
+  display: flex;
+  align-items: center;
+  padding:  0 80px;
+  text-transform: uppercase;
+}
+
+
+.logo .MuiAvatar-root {
+  width: 63px;
+  height: 63px;
+}
+
+nav .menu{
+  float: right;
+  margin-right: 80px;
+}
+
+nav .list_item {
+  display: inline-block;
+  color: lightgreen;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-left: 10px;
+  line-height: 80px;
+
+}
+
+nav .list_item:hover {
+  color: gray;
+
+}
+
+.bars {
+  color: lightgreen;
+  font-size: 20px;
+  float: right;
+  margin-right: 80px;
+  line-height: 80px;
+  cursor: pointer;
+  display: none;
+}
+@media(max-width: 1500px) {
+  .logo{
+    font-size: 30px;
+  }
+  nav .list_item{
+    font-size: 15px;
+  }
+
+  .login-container .right-side .welcomeNote h3{
+    margin-left: 0rem;
+  }
+}
+@media(max-width: 1200px) {
+  .bars {
+    display: block;
+  }
+  .css-2s90m6-MuiAvatar-root {
+    position: fixed;
+    cursor: pointer;
+  }
+  nav .menu {
+    position: fixed;
+    top: 80px;
+    background-color: black;  
+    width: 100%; 
+    transition: all 0.5s;
+  }
+
+  nav .list_item {
+    display: block;
+    text-align: center;
+    margin: 33px 20px;
+    line-height: 25px;
+    float: right;
+  }
+  .main-login .right-side {
+    display: none;
+  }
+
+  .register-container .right-side{
+    display: none;
+  }
+}
+.css-2s90m6-MuiAvatar-root {
+  margin-top: 20px;
+  cursor: pointer;
+}
