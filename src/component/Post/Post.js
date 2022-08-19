@@ -31,7 +31,7 @@ export default function Post({data}) {
     var axios = require('axios'); 
     var config = {
       method: 'get',
-      url: `http://localhost:5000/fetchComment/commentList/${data.id}`,
+      url: `http://67.205.180.60:5000/fetchComment/commentList/${data.id}`,
       headers: { }
     };
     
@@ -45,7 +45,7 @@ export default function Post({data}) {
 
     var config2 = {
       method: 'get',
-      url: `http://localhost:5000/images/postImage/${data.id}`,
+      url: `http://67.205.180.60:5000/images/postImage/${data.id}`,
       headers: { }
     };
     
@@ -70,7 +70,7 @@ export default function Post({data}) {
 
     var config = {
       method: 'post',
-      url: 'http://localhost:5000/fetchComment/addComment',
+      url: 'http://67.205.180.60:5000/fetchComment/addComment',
       headers: { 
         'Content-Type': 'application/json'
       },
@@ -98,7 +98,7 @@ export default function Post({data}) {
 
     var config = {
       method: 'post',
-      url: 'http://localhost:5000/post/approvePost',
+      url: 'http://67.205.180.60:5000/post/approvePost',
       headers: { 
         'Content-Type': 'application/json'
       },
@@ -126,7 +126,7 @@ export default function Post({data}) {
 
     var config = {
       method: 'post',
-      url: 'http://localhost:5000/post/rejectPost',
+      url: 'http://67.205.180.60:5000/post/rejectPost',
       headers: { 
         'Content-Type': 'application/json'
       },

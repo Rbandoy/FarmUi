@@ -31,7 +31,7 @@ function Login(){
 
     var config = {
       method: 'post',
-      url: 'http://localhost:5000/user/login',
+      url: 'http://67.205.180.60:5000/user/login',
       headers: { 
         'Content-Type': 'application/json'
       },

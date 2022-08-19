@@ -48,7 +48,7 @@ function Register(){
     
     var config = {
       method: 'post',
-      url: 'http://localhost:5000/user/register',
+      url: 'http://67.205.180.60:5000/user/register',
       headers: { 
         'Content-Type': 'application/json'
       },
