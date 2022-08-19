@@ -217,7 +217,7 @@ export default function Post({data}) {
 
           <Divider />
           {
-            ReactSession.get("user")?.role != undefined ? 
+            ReactSession.get("user")?.role !== undefined ? 
             ReactSession.get("user")?.role === 'admin' ? "" : 
             <div className="post_comment">
               <Accordion>
@@ -242,7 +242,30 @@ export default function Post({data}) {
                   </Typography>
                 </AccordionDetails>
               </Accordion>
-            </div> : ""
+            </div> : <div className="post_comment">
+              <Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1a-content"
+                  id="panel1a-header"
+                >
+                  <ListItemText secondary={"comments: " + comments.length} />
+
+                </AccordionSummary>
+                <Divider />
+                <AccordionDetails>
+                  <Typography>
+                    <ImageList sx={{ width: 500, height: 342 }} cols={1} rowHeight={164}>
+                      <ImageListItem>
+                        {comments.map((item) => {
+                          return <Comments data={item} />;
+                        })}
+                      </ImageListItem>
+                    </ImageList>
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            </div>
           }
           {
           
