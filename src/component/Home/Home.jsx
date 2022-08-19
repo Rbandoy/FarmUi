@@ -11,7 +11,7 @@ function Home() {
   useEffect(() => { 
     var config = {
       method: 'get',
-      url: ReactSession.get("user")?.role == 'admin' ? `http://67.205.180.60:5000/post/postListApproval`:`http://67.205.180.60:5000/post/postList`,
+      url: ReactSession.get("user")?.role ? ReactSession.get("user")?.role == 'admin' ? `http://67.205.180.60:5000/post/postListApproval`:`http://67.205.180.60:5000/post/postList`:`http://67.205.180.60:5000/post/postList`,
       headers: { }
     };
     
