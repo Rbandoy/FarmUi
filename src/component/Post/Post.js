@@ -164,6 +164,7 @@ export default function Post({data}) {
             ) : ""}
 
             {
+              ReactSession.get("user")?.role != undefined ?
               ReactSession.get("user")?.role == 'admin' ? ( 
                   <><Button
                   style={{margin: "2px"}}
@@ -182,7 +183,7 @@ export default function Post({data}) {
                   onClick={e => rejectPost(e, data.id)}
                 >
                     Reject
-                  </Button></>  ) : ""
+                  </Button></>  ) : "" : ""
             }
           </ListItem>
           <Divider />
@@ -216,6 +217,7 @@ export default function Post({data}) {
 
           <Divider />
           {
+            ReactSession.get("user")?.role != undefined ? 
             ReactSession.get("user")?.role === 'admin' ? "" : 
             <div className="post_comment">
               <Accordion>
@@ -240,9 +242,11 @@ export default function Post({data}) {
                   </Typography>
                 </AccordionDetails>
               </Accordion>
-            </div>
+            </div> : ""
           }
           {
+          
+          ReactSession.get("user")?.role != undefined ?
           ReactSession.get("user").role === 'admin' ? "":
           ReactSession.get("user") ?
             <form className="form_comment" onSubmit={(e) => handleSubmit(e, data.id)}>
@@ -262,7 +266,7 @@ export default function Post({data}) {
                 endIcon={<SendIcon />}
                 type="submit"
               >SEND</Button>
-            </form> : ""
+            </form> : "" : ""
           }
         </div>
       </div>
