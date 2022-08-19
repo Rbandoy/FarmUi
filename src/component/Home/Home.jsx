@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from "react";
 
 import { ReactSession } from 'react-client-session';
-// import { toast } from "react-toastify";
+import { 
+  useParams
+} from "react-router-dom";
 import Post from "../Post/Post";
 var axios = require('axios'); 
 
 function Home() {
+
+  let { post_id } = useParams();
+
   ReactSession.setStoreType("localStorage");
   let [post, setPost] = useState([]); 
   useEffect(() => { 
     var config = {
       method: 'get',
-      url: ReactSession.get("user")?.role == undefined ? `http://67.205.180.60:5000/post/postList` : ReactSession.get("user")?.role == 'admin' ? `http://67.205.180.60:5000/post/postListApproval`:`http://67.205.180.60:5000/post/postList`,
+      url: ReactSession.get("user")?.role == undefined ? `http://67.205.180.60:5000/post/postList/${post_id}` : ReactSession.get("user")?.role == 'admin' ? `http://67.205.180.60:5000/post/postListApproval/${post_id}`:`http://67.205.180.60:5000/post/postList/${post_id}`,
       headers: { }
     };
     

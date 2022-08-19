@@ -14,7 +14,8 @@ function Routers(){
       {
         ReactSession.get("user")? ( 
           <Routes>
-            <Route path="/" element={<Home/>}/>
+            <Route path="/" element={<Home />}/>
+            <Route path="/post/:post_id" element={<Home />}/>
             <Route path="/Register" element={<Register/>}/>
             <Route path="/Login" element={<Login/>}/>
             <Route path="*" element={<div>Page Not Found!</div>}/>
