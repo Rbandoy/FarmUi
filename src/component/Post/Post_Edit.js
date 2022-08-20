@@ -70,7 +70,7 @@ export default function Post_Edit({data}) {
 
     var config = {
       method: 'post',
-      url: 'http://67.205.180.60:5000/fetchComment/addComment',
+      url: 'https://rbandoy.site/fetchComment/addComment',
       headers: { 
         'Content-Type': 'application/json'
       },
@@ -98,7 +98,7 @@ export default function Post_Edit({data}) {
 
     var config = {
       method: 'post',
-      url: 'http://67.205.180.60:5000/post/approvePost',
+      url: 'https://rbandoy.site/post/approvePost',
       headers: { 
         'Content-Type': 'application/json'
       },
@@ -126,7 +126,7 @@ export default function Post_Edit({data}) {
 
     var config = {
       method: 'post',
-      url: 'http://67.205.180.60:5000/post/rejectPost',
+      url: 'https://rbandoy.site/post/rejectPost',
       headers: { 
         'Content-Type': 'application/json'
       },

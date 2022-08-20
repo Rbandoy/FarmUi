@@ -67,7 +67,7 @@ export default function CreatePost() {
     console.log(data)
     var config = {
       method: 'post',
-      url: 'http://67.205.180.60:5000/post/createPost',
+      url: 'https://rbandoy.site/post/createPost',
       headers: { 
         'Content-Type': 'application/json'
       },
