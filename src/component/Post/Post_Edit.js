@@ -19,7 +19,7 @@ import Remove from '@mui/icons-material/Delete';
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import Gallery from "../Gallery/Gallery"; 
 
-export default function Post({data}) {  
+export default function Post_Edit({data}) {  
   ReactSession.setStoreType("localStorage");
 
   let [comments, setComments] = useState([]); 
@@ -27,37 +27,37 @@ export default function Post({data}) {
   let [comment, setComment] = useState(""); 
   const [showMore, setShowMore] = React.useState(false);
 
-  useEffect(() => { 
-    var axios = require('axios'); 
-    var config = {
-      method: 'get',
-      url: `http://67.205.180.60:5000/fetchComment/commentList/${data.id}`,
-      headers: { }
-    };
+  // useEffect(() => { 
+  //   var axios = require('axios'); 
+  //   var config = {
+  //     method: 'get',
+  //     url: `http://67.205.180.60:5000/fetchComment/commentList/${data.id}`,
+  //     headers: { }
+  //   };
     
-    axios(config)
-    .then(function (response) { 
-      setComments(response.data.meta); 
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  //   axios(config)
+  //   .then(function (response) { 
+  //     setComments(response.data.meta); 
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   });
 
-    var config2 = {
-      method: 'get',
-      url: `http://67.205.180.60:5000/images/postImage/${data.id}`,
-      headers: { }
-    };
+  //   var config2 = {
+  //     method: 'get',
+  //     url: `http://67.205.180.60:5000/images/postImage/${data.id}`,
+  //     headers: { }
+  //   };
     
-    axios(config2)
-    .then(function (response) { 
-      setImages(response.data.meta);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  //   axios(config2)
+  //   .then(function (response) { 
+  //     setImages(response.data.meta);
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   });
     
-  }, []);
+  // }, []);
 
   let handleSubmit = (e, postId) => { 
     e.preventDefault();
@@ -155,8 +155,8 @@ export default function Post({data}) {
             <ListItemAvatar>
               <Avatar className="post_avatar" src={data?.image}></Avatar>
             </ListItemAvatar>
-            <ListItemText primary={<strong><a style={{ textDecoration: "underline", color: "lightgreen", cursor: "pointer" }}>{data.fname.toUpperCase()}</a></strong>} secondary={data?.role + " - " + data?.createdAt} />
-            {ReactSession.get("user")?.id == data.userId ? (
+            {/* <ListItemText primary={<strong><a style={{ textDecoration: "underline", color: "lightgreen", cursor: "pointer" }}>{data.fname.toUpperCase()}</a></strong>} secondary={data?.role + " - " + data?.createdAt} /> */}
+            {/* {ReactSession.get("user")?.id == data.userId ? (
               <div>
                 <label style={{ marginRight: "4px" }}><small style={{ "textTransform": "UPPERCASE", "fontSize": "12px" }}> edit </small></label>
                 <label style={{ marginRight: "4px" }}><small style={{ "textTransform": "UPPERCASE", "fontSize": "12px" }}> delete </small></label>
@@ -184,10 +184,10 @@ export default function Post({data}) {
                 >
                     Reject
                   </Button></>  ) : "" : ""
-            }
+            } */}
           </ListItem>
           <Divider />
-          <ListItem>
+          {/* <ListItem>
             <ListItemText
               primary={<div>
                 <strong>{data.postHeaderText}</strong>
@@ -210,7 +210,7 @@ export default function Post({data}) {
                 </Typography>
 
               </React.Fragment>} />
-          </ListItem>
+          </ListItem> */}
           <Divider />
           <div className="post-image-container">
             <Gallery images={images} />
@@ -268,7 +268,7 @@ export default function Post({data}) {
               </Accordion>
             </div>
           }
-          {
+          {/* {
           
           ReactSession.get("user")?.role != undefined ?
           ReactSession.get("user").role === 'admin' ? "":
@@ -291,7 +291,7 @@ export default function Post({data}) {
                 type="submit"
               >SEND</Button>
             </form> : "" : ""
-          }
+          } */}
         </div>
       </div>
     </div></> 
