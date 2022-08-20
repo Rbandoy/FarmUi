@@ -16,7 +16,7 @@ function Home() {
   useEffect(() => { 
     var config = {
       method: 'get',
-      url: ReactSession.get("user")?.role == undefined ? `http://67.205.180.60:5000/post/postList/${post_id != undefined ? post_id : ""}` : ReactSession.get("user")?.role == 'admin' ? `http://67.205.180.60:5000/post/postListApproval/${post_id != undefined ? post_id : ""}`:`http://67.205.180.60:5000/post/postList/${post_id != undefined ? post_id : ""}`,
+      url: ReactSession.get("user")?.role == undefined ? `http://backend.agriweb.site:5000/post/postList/${post_id != undefined ? post_id : ""}` : ReactSession.get("user")?.role == 'admin' ? `http://backend.agriweb.site:5000/post/postListApproval/${post_id != undefined ? post_id : ""}`:`http://backend.agriweb.site:5000/post/postList/${post_id != undefined ? post_id : ""}`,
       headers: { }
     };
     
