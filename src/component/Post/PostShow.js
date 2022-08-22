@@ -19,7 +19,7 @@ import Remove from '@mui/icons-material/Delete';
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import Gallery from "../Gallery/Gallery"; 
 
-export default function Post_Edit({data}) {  
+export default function PostShow({data}) {  
   ReactSession.setStoreType("localStorage");
 
   let [comments, setComments] = useState([]); 

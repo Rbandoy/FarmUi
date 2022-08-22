@@ -46,8 +46,7 @@ export default function Fabutton(props) {
             <CreatePost />
           </div>
           {/* <img style={style} src={tmpImg} /> */}
-        </Modal>
-         
+        </Modal> 
       </>
   )
 }

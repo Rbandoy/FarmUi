@@ -119,3 +119,19 @@ nav .list_item:hover {
   margin-top: 20px;
   cursor: pointer;
 }
+
+.bookmarks {
+  width: 400px;
+  height: 200px;
+  justify-content: center;
+  display: block;
+  align-items: center;
+  margin: 5px;
+}
+.viewDetails { 
+  margin-left: 15px;
+}
+.viewDetails:hover {
+  color: blue;
+  cursor: pointer; 
+}

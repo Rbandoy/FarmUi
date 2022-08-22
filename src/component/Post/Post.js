@@ -18,6 +18,8 @@ import Approve from '@mui/icons-material/Approval';
 import Remove from '@mui/icons-material/Delete'; 
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import Gallery from "../Gallery/Gallery"; 
+import PostMenu from "./PostMenu";
+
 
 export default function Post({data}) {  
   ReactSession.setStoreType("localStorage");
@@ -146,7 +148,7 @@ export default function Post({data}) {
   }
   let x = 0;
   let commentSubmit = comment.length === 0; 
-
+  
   return (
     <><div className="post_container">
       <div className="post">
@@ -156,13 +158,13 @@ export default function Post({data}) {
               <Avatar className="post_avatar" src={data?.image}></Avatar>
             </ListItemAvatar>
             <ListItemText primary={<strong><a style={{ textDecoration: "underline", color: "lightgreen", cursor: "pointer" }}>{data.fname.toUpperCase()}</a></strong>} secondary={data?.role + " - " + data?.createdAt} />
-            {ReactSession.get("user")?.id == data.userId ? (
+            {
+              ReactSession.get("user")?.role != undefined ? 
               <div>
-                <label style={{ marginRight: "4px" }}><small style={{ "textTransform": "UPPERCASE", "fontSize": "12px" }}> edit </small></label>
-                <label style={{ marginRight: "4px" }}><small style={{ "textTransform": "UPPERCASE", "fontSize": "12px" }}> delete </small></label>
-              </div>
-            ) : ""}
-
+                  <PostMenu data={{images, ...data}}/>
+              </div>  : ""
+            }
+            
             {
               ReactSession.get("user")?.role != undefined ?
               ReactSession.get("user")?.role == 'admin' ? ( 
@@ -199,8 +201,7 @@ export default function Post({data}) {
                   sx={{ display: 'inline' }}
                   component="span"
                   variant="body2"
-                  color="text.primary"
-                  contentEditable={true}
+                  color="text.primary" 
                 >
                   {data?.postDetails.length > 100 ?
                     <label onClick={() => setShowMore(!showMore)} className="showMore">
@@ -294,6 +295,8 @@ export default function Post({data}) {
           }
         </div>
       </div>
-    </div></> 
+    </div>
+    
+    </> 
   )
 }

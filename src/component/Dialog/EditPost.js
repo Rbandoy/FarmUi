@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { ReactSession } from 'react-client-session';
 import { Container, TextField, makeStyles, IconButton, Button } from "@material-ui/core";
-import { Add, Remove, PostAdd } from '@mui/icons-material';  
+import { Add, Remove, PostAdd, Delete } from '@mui/icons-material';  
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 const useStyle = makeStyles(theme => ({
   root: {
     '& .MuiTextField-root': { 
-      margin: theme.spacing(1), 
+      margin: theme.spacing(2), 
     },
     background: "whitesmoke",
     borderRadius: "5px 10px 5px 10px",
@@ -18,22 +18,24 @@ const useStyle = makeStyles(theme => ({
     margin: theme.spacing(1)
   },
   h1: {
-    margin: theme.spacing(1)
+    margin: theme.spacing(2),
+    textAlign: "center",
+    color: "lightgreen",
+    marginTop: "20px"
   }
 }))
 
-export default function CreatePost() {
+export default function CreatePost({data}) {
+ 
+  console.log("sample",data)
+
   ReactSession.setStoreType("localStorage");
   let navigate = useNavigate();
   const classes = useStyle();
-  const [inputField, setInputField] = useState([
-    { 
-      image: ""
-    }, 
-  ]);
+  const [inputField, setInputField] = useState(data.images);
 
-  const [title, setTitle] = useState("");
-  const [details, setDetails] = useState("");
+  const [title, setTitle] = useState(data.postHeaderText);
+  const [details, setDetails] = useState(data.postDetails);
 
   const handleInputChange = (index, e) => {
     const value = [...inputField];
@@ -58,20 +60,20 @@ export default function CreatePost() {
   const submitPost = async (e) => {
     e.preventDefault();
     var axios = require('axios');
-    var data = JSON.stringify({
+    var params = JSON.stringify({
       "title": title,
       "details": details,
-      "userId": ReactSession.get("user").id,
+      "id": data.id,
       "image": inputField
-    });
-    console.log(data)
+    }); 
+
     var config = {
       method: 'post',
-      url: 'https://rbandoy.site/post/createPost',
+      url: "https://rbandoy.site/post/updatePost",
       headers: { 
         'Content-Type': 'application/json'
       },
-      data : data
+      data : params
     };
 
     axios(config)
@@ -80,6 +82,9 @@ export default function CreatePost() {
       setTimeout(()=> {  
         window.location.reload();
       }, 2000)
+      setInputField("");
+      setTitle("");
+      setDetails("");
     })
     .catch(function (error) {
       console.log(error);
@@ -90,8 +95,8 @@ export default function CreatePost() {
 
   return (
     <Container> 
-      <form style={{maxHeight: 700, overflow: 'auto'}}  className={classes.root} onSubmit={submitPost}>
-        <h1 className={classes.h1}>Create Post</h1>
+      <form style={{maxHeight: 700, overflow: 'auto'}} className={classes.root} onSubmit={submitPost}>
+        <h1 className={classes.h1}>POST</h1>
         {
           inputField.map((field, index) => {
             return <div key={index}>
@@ -136,7 +141,17 @@ export default function CreatePost() {
           endIcon={<PostAdd />}
           onSubmit={submitPost}
           >
-          Post
+          Update
+        </Button>
+        <Button 
+          className={classes.button}
+          variant="contained" 
+          color="secondary" 
+          type="submit" 
+          endIcon={<Delete />}
+          onSubmit={submitPost}
+          >
+          Delete
         </Button>
       </form>
     </Container>

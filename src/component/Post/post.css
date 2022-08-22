@@ -64,3 +64,11 @@
   max-width: 100%; 
   
 }
+
+.postMenu :hover {
+  text-decoration: underline;
+  color: blue;  
+  cursor: pointer;
+  width: 10px;
+}
+ 

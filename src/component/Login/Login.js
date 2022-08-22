@@ -43,10 +43,10 @@ function Login(){
         console.log(api)
         toast(api.data.message); 
         ReactSession.set("user", api.data.meta);
-        setTimeout(()=> {  
+        setTimeout(()=> {   
           navigate("/");
+          window.location.reload();
         }, 5000)
-   
       } else {
         toast(api.data); 
         setTimeout(()=> { 
