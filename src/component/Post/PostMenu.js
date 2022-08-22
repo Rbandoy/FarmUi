@@ -82,12 +82,12 @@ export default function PostMenu({data}) {
         open={openMenu}
         onClose={handleCloseMenu}
         anchorOrigin={{
-          vertical: 'top',
+          vertical: 'bottom',
           horizontal: 'left',
         }}
         transformOrigin={{
           vertical: 'top',
-          horizontal: 'left',
+          horizontal: 'center',
         }}
       >
         {ReactSession.get("user")?.id == data.userId ? ( 
