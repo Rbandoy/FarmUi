@@ -143,7 +143,7 @@ export default function CreatePost({data}) {
           >
           Update
         </Button>
-        <Button 
+        {/* <Button 
           className={classes.button}
           variant="contained" 
           color="secondary" 
@@ -152,7 +152,7 @@ export default function CreatePost({data}) {
           onSubmit={submitPost}
           >
           Delete
-        </Button>
+        </Button> */}
       </form>
     </Container>
   )
