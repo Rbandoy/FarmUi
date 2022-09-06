@@ -1,6 +1,6 @@
  
 import React, { useEffect, useState } from "react";
-import {Settings, Bookmark, Update} from '@mui/icons-material/';  
+import {Settings, Bookmark, Update, Delete, Close} from '@mui/icons-material/';  
 import Modal from '@mui/material/Modal';
 import EditPost from '../Dialog/EditPost';
 import Menu from '@mui/material/Menu';
@@ -66,6 +66,35 @@ export default function PostMenu({data}) {
     }); 
   }
 
+  const deleteSubmit = () => { 
+    handleCloseMenu();
+
+    var params = JSON.stringify({
+      "postId": data.id
+    });
+
+    var config = {
+      method: 'post',
+      url: 'https://rbandoy.site/post/deletePost',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      data : params
+    };
+
+    axios(config)
+    .then(function (response) {
+      toast(response.data.message);
+      setTimeout(()=> {  
+        window.location.reload();
+      }, 2000)
+    })
+    .catch(function (error) {
+      toast(error.response.data);
+      console.log(error.response.data);
+    }); 
+  }
+
   return (
     <> <Settings
     id="demo-positioned-button"
@@ -91,10 +120,10 @@ export default function PostMenu({data}) {
         }}
       >
         {ReactSession.get("user")?.id == data.userId ? ( 
-                 <MenuItem onClick={handleOpen}><Update /> Update</MenuItem>
+                 <><MenuItem onClick={handleOpen}><Update /> Update</MenuItem><MenuItem onClick={deleteSubmit}><Delete />Delete</MenuItem></>
         ) : ""} 
         <MenuItem onClick={bookmarkSubmit}><Bookmark />Bookmark this</MenuItem>
-        <MenuItem onClick={handleCloseMenu}>Close</MenuItem>
+        <MenuItem onClick={handleCloseMenu}><Close />Close</MenuItem>
     </Menu>
     <Modal
       open={open}
