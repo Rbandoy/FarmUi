@@ -159,16 +159,19 @@ export default function Post({data}) {
             </ListItemAvatar>
             <ListItemText primary={<strong><a style={{ textDecoration: "underline", color: "lightgreen", cursor: "pointer" }}>{data.fname.toUpperCase()}</a></strong>} secondary={data?.role + " - " + data?.createdAt} />
             {
-              ReactSession.get("user")?.role != undefined ? 
-              <div>
-                  <PostMenu data={{images, ...data}}/>
-              </div>  : ""
+              ReactSession.get("user")?.role !== undefined ? (
+                ReactSession.get("user")?.role !== 'admin' ?  (
+                  <div>
+                    <PostMenu data={{images, ...data}}/>
+                  </div>
+                ) : ""
+              ) : ""
             }
-            
-            {
-              ReactSession.get("user")?.role != undefined ?
-              ReactSession.get("user")?.role == 'admin' ? ( 
-                  <><Button
+
+{
+            ReactSession.get("user")?.role !== undefined ? (
+                ReactSession.get("user")?.role === 'admin' && data.status != 1 ?  (
+                  <Button
                   style={{margin: "2px"}}
                   variant="contained"
                   color="primary"
@@ -177,14 +180,23 @@ export default function Post({data}) {
                   onClick={e => approvePost(e, data.id)}
                 >
                   Approve
-                </Button><Button
+                </Button>
+                ) : ""
+              ) : ""
+            }
+            
+            {
+              ReactSession.get("user")?.role !== undefined ?
+              ReactSession.get("user")?.role === 'admin' ?  (
+                  <> 
+                <Button
                   variant="contained"
                   color="primary"
                   type="submit"
                   endIcon={<Remove />}
                   onClick={e => rejectPost(e, data.id)}
                 >
-                    Reject
+                    Reject/Delete
                   </Button></>  ) : "" : ""
             }
           </ListItem>
