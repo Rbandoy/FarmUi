@@ -48,7 +48,7 @@ function Register(){
     
     var config = {
       method: 'post',
-      url: 'https://rbandoy.site/user/register',
+      url: 'https://backend.agriweb.site/user/register',
       headers: { 
         'Content-Type': 'application/json'
       },
