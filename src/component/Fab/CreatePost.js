@@ -67,7 +67,7 @@ export default function CreatePost() {
     console.log(data)
     var config = {
       method: 'post',
-      url: 'https://rbandoy.site/post/createPost',
+      url: 'https://backend.agriweb.site/post/createPost',
       headers: { 
         'Content-Type': 'application/json'
       },
