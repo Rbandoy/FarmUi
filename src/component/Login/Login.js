@@ -31,7 +31,7 @@ function Login(){
 
     var config = {
       method: 'post',
-      url: 'https://rbandoy.site/user/login',
+      url: 'https://backend.agriweb.site/user/login',
       headers: { 
         'Content-Type': 'application/json'
       },
