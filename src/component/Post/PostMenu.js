@@ -49,7 +49,7 @@ export default function PostMenu({data}) {
 
     var config = {
       method: 'post',
-      url: 'https://rbandoy.site/bookmark/createBookmark',
+      url: 'https://backend.agriweb.site/bookmark/createBookmark',
       headers: { 
         'Content-Type': 'application/json'
       },
@@ -75,7 +75,7 @@ export default function PostMenu({data}) {
 
     var config = {
       method: 'post',
-      url: 'https://rbandoy.site/post/deletePost',
+      url: 'https://backend.agriweb.site/post/deletePost',
       headers: { 
         'Content-Type': 'application/json'
       },
