@@ -29,7 +29,7 @@ export default function Bookmarks({data}) {
 
     var config = {
       method: 'get',
-      url: 'https://rbandoy.site/bookmark/bookmarkList/1',
+      url: 'https://backend.agriweb.site/bookmark/bookmarkList/1',
       headers: { },
       data : data
     };
