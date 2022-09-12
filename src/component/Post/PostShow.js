@@ -70,7 +70,7 @@ export default function PostShow({data}) {
 
     var config = {
       method: 'post',
-      url: 'https://rbandoy.site/fetchComment/addComment',
+      url: 'https://backend.agriweb.site/fetchComment/addComment',
       headers: { 
         'Content-Type': 'application/json'
       },
@@ -98,7 +98,7 @@ export default function PostShow({data}) {
 
     var config = {
       method: 'post',
-      url: 'https://rbandoy.site/post/approvePost',
+      url: 'https://backend.agriweb.site/post/approvePost',
       headers: { 
         'Content-Type': 'application/json'
       },
@@ -126,7 +126,7 @@ export default function PostShow({data}) {
 
     var config = {
       method: 'post',
-      url: 'https://rbandoy.site/post/rejectPost',
+      url: 'https://backend.agriweb.site/post/rejectPost',
       headers: { 
         'Content-Type': 'application/json'
       },
