@@ -10,6 +10,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'; 
 import View from '@mui/icons-material/Details'; 
+import Post from "../Post/Post";
 
 var axios = require('axios');
 
@@ -62,10 +63,7 @@ export default function Bookmarks({data}) {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                {item?.postDetails.substring(0, 100)}...  
-                <small  className="viewDetails"> 
-                Show More <View/>
-              </small>
+                {item?.postDetails} 
               </Typography>
              
             </AccordionDetails> 

@@ -9,11 +9,11 @@ form {
   width: 50%;
 }
 .register-container {
-  height: 79vh;
-  width: 31vw;
+  height: 91vh;
+  width: 48vw;
   /* background: lightgreen; */
   border-radius: 1rem;
-  margin: 2rem auto;
+  margin: 7rem auto;
   box-shadow:0.4rem 0.4rem 2rem -0.6rem #414441;
   justify-content: center;
   display: flex;
@@ -111,4 +111,16 @@ form {
 
 .register-logo h1 {
   color: lightgreen;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

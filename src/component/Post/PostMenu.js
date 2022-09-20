@@ -1,6 +1,6 @@
  
 import React, { useEffect, useState } from "react";
-import {Settings, Bookmark, Update, Delete, Close} from '@mui/icons-material/';  
+import {Settings, Bookmark, Update, Archive, Close} from '@mui/icons-material/';  
 import Modal from '@mui/material/Modal';
 import EditPost from '../Dialog/EditPost';
 import Menu from '@mui/material/Menu';
@@ -120,7 +120,8 @@ export default function PostMenu({data}) {
         }}
       >
         {ReactSession.get("user")?.id == data.userId ? ( 
-                 <><MenuItem onClick={handleOpen}><Update /> Update</MenuItem><MenuItem onClick={deleteSubmit}><Delete />Delete</MenuItem></>
+                 <><MenuItem onClick={handleOpen}><Update /> Update</MenuItem>
+                 <MenuItem onClick={deleteSubmit}><Archive /></MenuItem></>
         ) : ""} 
         <MenuItem onClick={bookmarkSubmit}><Bookmark />Bookmark this</MenuItem>
         <MenuItem onClick={handleCloseMenu}><Close />Close</MenuItem>

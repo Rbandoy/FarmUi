@@ -2,12 +2,10 @@ import React from "react";
 import './login.css';
 import { useState } from "react";
 import { Link, useNavigate, Redirect } from "react-router-dom";
-import { toast } from "react-toastify";
-import logo from '../r.jpg'
+import { toast } from "react-toastify"; 
 import welcome from '../wel.jpg'
 import { ReactSession } from 'react-client-session';
-
-
+import Footer from '../Footer/Footer';
 
 function Login(){
   ReactSession.setStoreType("localStorage");
@@ -61,22 +59,22 @@ function Login(){
 
   return (
     <div className="main-login"> 
-      <div className="login-container">   
+      <div className="login-container scale-in-bl">   
         <div className="left-side">  
           <div className="logo">
             <h1 className="login">Login</h1>
             {/* <img src={logo} alt="" id="logo" srcset=""/> */}
-          </div>
-          <form onSubmit={handleSubmit}>
-              <label for="username">Username:</label>
-              <input placeholder="Enter Username" value={username} onChange={(e) => setUsername(e.target.value)} id="username" type="text"/>
-              <label for="password">Password:</label>
-              <input placeholder="Enter Password" value={password} onChange={(e) => setPassword(e.target.value)} id="password" type="password"/>
-              <button id="login">Login</button>
-          </form>
-          <div className="footer">
-            <h4>Don't Have an Account? <Link to="/Register">Register Here!</Link></h4>
-          </div>
+          </div> 
+            <form onSubmit={handleSubmit}>
+                <label for="username">Username:</label>
+                <input placeholder="Enter Username" value={username} onChange={(e) => setUsername(e.target.value)} id="username" type="text"/>
+                <label for="password">Password:</label>
+                <input placeholder="Enter Password" value={password} onChange={(e) => setPassword(e.target.value)} id="password" type="password"/>
+                <button className=" rotate-scale-down-diag-1" id="login">Login</button>
+            </form>
+            <div className="footer focus-in-contract">
+              <h4 className="">Don't Have an Account? <Link to="/Register">Register Here!</Link></h4>
+            </div> 
         </div> 
         <div className="right-side">
            <div className="welcomeNote">
@@ -87,8 +85,9 @@ function Login(){
            </div>
         </div> 
       </div> 
-   
+      <Footer />
     </div>
+
   )
 }
 

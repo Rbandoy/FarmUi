@@ -52,8 +52,8 @@ export default function Comments({data}) {
                   <React.Fragment>
                     {ReactSession.get("user")?.id == data.userId ? (
                       <div>
-                        <label style={{ marginRight: "4px" }}>edit</label>
-                        <label style={{ marginRight: "4px" }}>delete</label>
+                        {/* <label style={{ marginRight: "4px" }}>edit</label>
+                        <label style={{ marginRight: "4px" }}>delete</label> */}
                     </div> 
                     ):""} 
                      <br></br>

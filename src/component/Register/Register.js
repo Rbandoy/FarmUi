@@ -2,10 +2,12 @@
 import { toast } from "react-toastify";
 import React from "react"; 
 import { ReactSession } from 'react-client-session';
+import PasswordStrengthBar from 'react-password-strength-bar';
 import './register.css';
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import welcome from '../wel.jpg'
+import Footer from '../Footer/Footer';
 var axios = require('axios');
 
 function Register(){
@@ -107,11 +109,12 @@ function Register(){
             <label for="email">Email:</label>
             <input placeholder="Enter Email" required value={email} onChange={(e) => setEmail(e.target.value)}  className="registerInput" id="email" type="email"/>
             <label for="contact">Contact No:</label>
-            <input placeholder="Enter Contact No." required value={contact} onChange={(e) => setContact(e.target.value)}  className="registerInput" id="contact" type="text"/>
+            <input placeholder="Enter Contact No." required value={contact} onChange={(e) => setContact(e.target.value)}  className="registerInput" id="contact" type="number"/>
             <label for="username">Username:</label>
             <input placeholder="Enter Username" required value={username} onChange={(e) => setUsername(e.target.value)} className="registerInput" id="username" type="text"/>
             <label for="password">Password:</label>
             <input placeholder="Enter Password" required value={password} onChange={(e) => setPassword(e.target.value)} id="password" type="password"/>
+            <PasswordStrengthBar password={password} />
             <button id="register" disabled={submit}  style={{background: submit ? "red": ""}} >REGISTER</button>
         </form> 
         <div className="footer">
@@ -119,6 +122,7 @@ function Register(){
         </div>
       </div> 
     </div>  
+  <Footer />
   </div> 
   )
 }

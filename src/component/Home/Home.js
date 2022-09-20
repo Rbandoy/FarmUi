@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-
+import './home.css'
 import { ReactSession } from 'react-client-session';
 import { 
   useParams
 } from "react-router-dom";
-import Post from "../Post/Post";
+import Grid from '@mui/material/Grid'; 
+import Post from "../Post/Post"; 
+import Footer from '../Footer/Footer';
+import Profile from "../Profile/Profile";
 var axios = require('axios'); 
 
 function Home() {
@@ -30,13 +33,29 @@ function Home() {
   }, []);
  
   return (
-    <div style={{padding: "10px", margin: "10px", paddingBottom: "30px"}}>  
-        { 
-          post.length > 0 ? ( post.map((item, key) => {  
-            return <Post data={item} key={key}/>
-          }) ) : ( <div>No post available!</div>) 
-        }  
-    </div>
+    <>
+    <Grid container spacing={2}>
+      <Grid item xs={ ReactSession.get("user") ? 8: 12}>
+      <div style={{ padding: "10px", margin: "10px", paddingBottom: "30px" }}>
+        {post.length > 0 ? (post.map((item, key) => {
+          return <Post data={item} key={key} />;
+        })) : (<div>No post available!</div>)}
+      </div>
+      </Grid>
+      {
+        ReactSession.get("user") ? 
+        <Grid item xs={4}>
+          <div className="profile">
+             <Profile data={post}/>
+          </div>
+        </Grid> 
+        : ''
+      }
+     
+    </Grid>
+    
+    <Footer />   
+    </>
   )
 }
 

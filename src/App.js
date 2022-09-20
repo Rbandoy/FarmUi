@@ -10,13 +10,16 @@ import Navbar from './component/NavBar/Navbar';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import { ScrollContainer, ScrollPage } from "react-scroll-motion";
+
 function App() { 
   return (
     <><div className="App">
       <Router>
         <Navbar />
-        <Routers />
-        {/* <Footer /> */}   
+        <ScrollContainer> 
+            <Routers /> 
+        </ScrollContainer> 
       </Router>
       <ToastContainer />
     </div></>
