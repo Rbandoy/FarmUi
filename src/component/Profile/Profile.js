@@ -16,18 +16,13 @@ export default function Profile({data}) {
   console.log(data)
   return (<>
     <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <Farmer />
-          </Avatar>
-        </ListItemAvatar>
+      <ListItem> 
         <ListItemText primary="Profile" secondary="" />
       </ListItem>
       <ListItem>
         <ListItemAvatar>
           <Avatar>
-            <ImageIcon />
+            <Farmer />
           </Avatar>
         </ListItemAvatar>
         <ListItemText primary={ReactSession.get("user").role} secondary="Role" />
