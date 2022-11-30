@@ -30,7 +30,7 @@ function Home() {
     console.log(e)
     var config = {
       method: 'get',
-      url: ReactSession.get("user")?.role == undefined ? `http://localhost:5000/post/postList/${e != undefined ? e : ""}` : ReactSession.get("user")?.role == 'admin' ? `http://localhost:5000/post/postListApproval/${e != undefined ? e : ""}`:`http://localhost:5000/post/postList/${e != undefined ? e : ""}`,
+      url: ReactSession.get("user")?.role == undefined ? `http://https://backend.agriweb.site/post/postList/${e != undefined ? e : ""}` : ReactSession.get("user")?.role == 'admin' ? `http://https://backend.agriweb.site/post/postListApproval/${e != undefined ? e : ""}`:`http://https://backend.agriweb.site/post/postList/${e != undefined ? e : ""}`,
       headers: { }
     };
     
