@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'; 
 import View from '@mui/icons-material/Details'; 
 import Post from "../Post/Post";
+import { ReactSession } from 'react-client-session';
 
 var axios = require('axios');
 
@@ -23,14 +24,14 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 export default function Bookmarks({data}) {
   console.log("bookmark",data);
-
+  ReactSession.setStoreType("localStorage");
   let [bookmarks, setBookmarks] = useState([]);
 
   useEffect(() => {  
 
     var config = {
       method: 'get',
-      url: 'https://backend.agriweb.site/bookmark/bookmarkList/1',
+      url: `https://backend.agriweb.site/bookmark/bookmarkList/${ReactSession.get("user").id}`,
       headers: { },
       data : data
     };
