@@ -15,6 +15,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: install npm
+          command: "sudo apt install npm"
+      - run:
           name: Update NPM
           command: "sudo npm install -g npm@5"
       - restore_cache:
