@@ -72,7 +72,7 @@ export default function Navbar() {
             <Avatar className="" src={ReactSession.get("user")?.image}></Avatar>
           </NavLink>
             <Fabutton /></>
-        ) : <NavLink to="/">FARM </NavLink>}
+        ) : <NavLink to="/">Rice Up </NavLink>}
       </label>
       <label className="userName">{ReactSession.get("user") ? ReactSession.get("user").fname : ""}</label>
       <div className="bars">
